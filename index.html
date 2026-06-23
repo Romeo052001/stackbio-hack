@@ -5,45 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StackBio Hack</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
       background: #fff;
       color: #000;
-      min-height: 100vh;
     }
 
-    .page {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      height: 100vh;
-      border-top: 2px solid #000;
-      overflow: hidden;
+    /* HERO */
+    .hero img {
+      width: 100%;
+      display: block;
     }
 
-    /* LEFT COLUMN */
-    .left {
-      border-right: 1px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      padding: 60px 60px 60px 60px;
-      overflow-y: auto;
+    /* FORM SECTION */
+    .form-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 72px 40px 80px;
     }
 
-    .site-name {
-      font-size: clamp(36px, 5vw, 72px);
+    .form-section h2 {
+      font-size: clamp(32px, 5vw, 56px);
       font-weight: 900;
+      text-transform: uppercase;
       letter-spacing: -0.02em;
-      line-height: 1;
-      margin-bottom: 60px;
+      margin-bottom: 8px;
     }
 
-    /* FORM */
+    .form-section p.sub {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 48px;
+    }
+
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .form-group label {
       display: block;
@@ -65,7 +63,7 @@
       color: #000;
       outline: none;
     }
-    .form-group input::placeholder { color: #aaa; }
+    .form-group input::placeholder { color: #bbb; }
     .form-group input:focus { border-bottom-color: #555; }
     .optional { font-weight: 400; color: #aaa; }
 
@@ -74,7 +72,7 @@
       background: #000;
       color: #fff;
       border: none;
-      padding: 18px 40px;
+      padding: 18px;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.15em;
@@ -86,82 +84,29 @@
     .submit-btn:hover { background: #333; }
     .submit-btn:disabled { background: #888; cursor: not-allowed; }
 
-    #thank-you-msg { display: none; }
+    #thank-you-msg { display: none; text-align: center; padding: 40px 0; }
     #thank-you-msg h3 {
-      font-size: clamp(36px, 4vw, 56px);
+      font-size: clamp(36px, 5vw, 64px);
       font-weight: 900;
       text-transform: uppercase;
       line-height: 1;
       margin-bottom: 20px;
     }
     #thank-you-msg p { font-size: 18px; color: #555; line-height: 1.5; }
-    #thank-you-msg .divider { width: 50px; height: 3px; background: #000; margin: 24px 0; }
-
-    /* RIGHT COLUMN */
-    .right {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 60px 60px 60px 60px;
-    }
-
-    .signup-heading {
-      font-size: clamp(36px, 5vw, 72px);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin-bottom: 15vh;
-    }
-
-    .right-bottom { padding-bottom: 20px; }
-
-    .going-live {
-      font-size: clamp(28px, 3.5vw, 52px);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .tagline {
-      font-size: clamp(14px, 1.5vw, 20px);
-      font-weight: 500;
-      color: #444;
-      margin-bottom: 48px;
-    }
-
-    .brought-by {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 8px;
-    }
-
-    .signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: clamp(40px, 5vw, 72px);
-      font-weight: 700;
-      line-height: 1;
-      color: #000;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .page { grid-template-columns: 1fr; }
-      .left { padding: 48px 32px; border-right: none; border-bottom: 1px solid #ddd; }
-      .right { padding: 48px 32px; }
-      .site-name { margin-bottom: 40px; }
-    }
+    #thank-you-msg .divider { width: 50px; height: 3px; background: #000; margin: 24px auto; }
   </style>
 </head>
 <body>
 
-<div class="page">
+  <!-- HERO IMAGE -->
+  <div class="hero">
+    <img src="/hero.jpg" alt="StackBio Hack" />
+  </div>
 
-  <!-- LEFT -->
-  <div class="left">
-    <div class="site-name">StackBiohack.com</div>
+  <!-- SIGNUP FORM -->
+  <div class="form-section">
+    <h2>Sign Up Now</h2>
+    <p class="sub">Be first to know when StackBio Hack goes live.</p>
 
     <form id="signup-form" action="https://formsubmit.co/ajax/romeo@davidoffmedia.com" method="POST">
       <input type="hidden" name="_subject" value="New StackBio Hack Sign Up" />
@@ -196,34 +141,22 @@
     </div>
   </div>
 
-  <!-- RIGHT -->
-  <div class="right">
-    <div class="signup-heading">Sign Up Now.</div>
-
-    <div class="right-bottom">
-      <div class="going-live">Site going live.</div>
-      <div class="tagline">Shop Peps to Stack + Result Track</div>
-      <div class="brought-by">Brought to you by:</div>
-      <div class="signature">Chip Marsland</div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  document.getElementById('signup-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Submitting…';
-    try {
-      const data = new FormData(this);
-      await fetch(this.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-    } catch(err) {}
-    document.getElementById('signup-form').style.display = 'none';
-    document.getElementById('thank-you-msg').style.display = 'block';
-  });
-</script>
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      try {
+        const data = new FormData(this);
+        await fetch(this.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      } catch(err) {}
+      document.getElementById('signup-form').style.display = 'none';
+      document.querySelector('.form-section h2').style.display = 'none';
+      document.querySelector('.form-section p.sub').style.display = 'none';
+      document.getElementById('thank-you-msg').style.display = 'block';
+    });
+  </script>
 
 </body>
 </html>
